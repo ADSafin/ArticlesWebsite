@@ -1,0 +1,178 @@
+/* Общие стили */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Верхняя панель */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.login-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+}
+
+/* Основная часть */
+.main-content {
+    padding: 20px;
+    background-color: white;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.add-article-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+}
+
+.add-article-button:hover {
+    background-color: #218838;
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.article-block {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.article-block img {
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+    border-radius: 4px;
+    object-fit: contain;
+}
+
+.article-block h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.article-block p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Нижняя панель */
+.footer {
+    background-color: #002244;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Логотип и текст выровнены по левому краю */
+}
+
+.footer-logo-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Отступ между логотипом и текстом */
+}
+
+.footer-logo-img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.footer-logo-text {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.footer-description {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #ddd;
+    max-width: 400px; /* Ограничение ширины блока */
+    line-height: 1.5; /* Интервал между строками */
+    white-space: normal; /* Разрешение переноса текста */
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Растягивает нижнюю панель на всю ширину */
+}
+
+.footer-links-PrivacyPolicy {
+    margin-right: auto; /* Перемещает блок с ссылками влево */
+}
+
+.footer-links-Terms {
+    margin-right: auto; /* Перемещает блок с ссылками влево */
+}
+
+.footer-text {
+    margin: 0;
+}
+
+.footer-links-PrivacyPolicy a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links-PrivacyPolicy a:hover {
+    text-decoration: underline;
+}
+.footer-links-Terms a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links-Terms a:hover {
+    text-decoration: underline;
+}
