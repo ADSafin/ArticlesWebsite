@@ -1,0 +1,30 @@
+{% extends "articles/layout.html" %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'articles/css/articlestyle.css' %}">
+<link rel="stylesheet" href="{% static 'articles/css/styles.css' %}">
+{% endblock %}
+
+{% block body %}
+<body>
+    <div class="container">
+        <header>
+            <h1>{{ article.title }}</h1>
+        </header>
+        <main>
+            <div class="article-image">
+                <img src="{% static 'articles/images/image1.jpg' %}" alt="{{ article.title }}">
+            </div>
+            <div class="article-content">
+                <p>{{ article.content }}</p>
+            </div>
+            {% if user.is_authenticated and user == article.author %}
+                <div class="edit-link">
+                    <a href="{% url 'edit_article' article.id %}">Изменить</a>
+                </div>
+            {% endif %}
+        </main>
+    </div>
+</body>
+{% endblock %}

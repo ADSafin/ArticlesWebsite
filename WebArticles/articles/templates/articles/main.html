@@ -1,27 +1,14 @@
-<!DOCTYPE html>
+{% extends "articles/layout.html" %}
 {% load static %}
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Статьи</title>
-    <link rel="stylesheet" href="{% static 'articles/css/styles.css' %}">
-</head>
-<body>
-    <!-- Верхняя панель -->
-    <header class="header">
-        <div class="logo-container">
-            <img src="{% static 'articles/images/logo.jpg' %}" alt="Логотип" class="logo-img">
-            <div class="logo-text">logoipsum</div>
-        </div>
-        <button class="login-button">Войти</button>
-    </header>
 
+{% block body %}
     <!-- Основная часть -->
     <main class="main-content">
         <div class="main-header">
             <h1>Статьи</h1>
+            <form action="{% url 'article' %}" target="_self">
             <button class="add-article-button">Добавить статью</button>
+                </form>
         </div>
         <div class="articles-grid">
             <!-- Блок 1 -->
@@ -50,27 +37,4 @@
             </div>
         </div>
     </main>
-
-    <!-- Нижняя панель -->
-    <footer class="footer">
-        <div class="footer-logo-container">
-            <img src="{% static 'articles/images/logo.jpg' %}" alt="Логотип" class="footer-logo-img">
-            <div class="footer-logo-text">logoipsum</div>
-        </div>
-        <p class="footer-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Amet tristique placerat eleifend aliquam pellentesque facilisis ultrices.
-            Imperdiet mus urna egestas at tellus.
-        </p>
-        <div class="footer-bottom">
-            <div class="footer-links-PrivacyPolicy">
-                <a href="#">Privacy Policy</a>
-            </div>
-            <div class="footer-links-Terms">
-                <a href="#">Terms and Condition</a>
-            </div>
-            <p class="footer-text">© 2024 Ваша компания. Все права защищены.</p>
-        </div>
-    </footer>
-</body>
-</html>
+{% endblock %}
