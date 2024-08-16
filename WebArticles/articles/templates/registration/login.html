@@ -1,0 +1,36 @@
+{% extends "articles/layout.html" %}
+{% load static %}
+
+{% block style %}
+<title>Авторизация</title>
+<link rel="stylesheet" href="{% static 'articles/css/login.css' %}">
+<link rel="stylesheet" href="{% static 'articles/css/styles.css' %}">
+{% endblock %}
+
+{% block body %}
+{% if user.is_authenticated %}
+<p>Добро пожаловать, {{ user.username }}. Вы уже авторизированны.</p>
+{% else %}
+<body>
+    <div class="login-container">
+        <h1>Войти в систему</h1>
+
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" id="username" name="username" placeholder="Логин" required>
+            </div>
+
+            <div class="form-group">
+                <input type="password" id="password" name="password" placeholder="Пароль" required>
+            </div>
+
+            <form action="{% url 'main' %}" target="_self">
+                <button type="submit" class="log-button">Войти</button>
+            </form>
+            <a href="{% url 'registration' %}" class="register-link">Регистрация</a>
+        </form>
+    </div>
+</body>
+{% endif %}
+{% endblock %}

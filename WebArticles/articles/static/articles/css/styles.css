@@ -2,8 +2,9 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
+    background-color: white;
+    height: 100vh;
+    padding: 20px;
 }
 
 /* Верхняя панель */
@@ -13,7 +14,6 @@ body {
     align-items: center;
     padding: 10px 20px;
     background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .logo-container {
@@ -31,6 +31,11 @@ body {
     font-size: 24px;
     font-weight: bold;
     color: #333;
+}
+
+.username {
+    margin-left:1000px;
+    font-weight: bold;
 }
 
 .login-button {
@@ -72,6 +77,16 @@ body {
     background-color: #218838;
 }
 
+.article-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.article-link:hover .article-block {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 .articles-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -89,7 +104,7 @@ body {
 .article-block img {
     width: 100%;
     max-width: 300px;
-    height: 200px;
+    height: 150px;
     border-radius: 4px;
     object-fit: contain;
 }
@@ -111,13 +126,13 @@ body {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Логотип и текст выровнены по левому краю */
+    align-items: flex-start;
 }
 
 .footer-logo-container {
     display: flex;
     align-items: center;
-    margin-bottom: 10px; /* Отступ между логотипом и текстом */
+    margin-bottom: 10px;
 }
 
 .footer-logo-img {
@@ -135,23 +150,23 @@ body {
     margin: 10px 0;
     font-size: 14px;
     color: #ddd;
-    max-width: 400px; /* Ограничение ширины блока */
-    line-height: 1.5; /* Интервал между строками */
-    white-space: normal; /* Разрешение переноса текста */
+    max-width: 400px;
+    line-height: 1.5;
+    white-space: normal;
 }
 
 .footer-bottom {
     display: flex;
     justify-content: space-between;
-    width: 100%; /* Растягивает нижнюю панель на всю ширину */
+    width: 100%;
 }
 
 .footer-links-PrivacyPolicy {
-    margin-right: auto; /* Перемещает блок с ссылками влево */
+    margin-right: auto;
 }
 
 .footer-links-Terms {
-    margin-right: auto; /* Перемещает блок с ссылками влево */
+    margin-right: auto;
 }
 
 .footer-text {

@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Статьи</title>
     {% block style%}
+    <title>Статьи</title>
     <link rel="stylesheet" href="{% static 'articles/css/styles.css' %}">
     {% endblock %}
 </head>
@@ -14,11 +14,25 @@
     <header class="header">
         <div class="logo-container">
             <img src="{% static 'articles/images/logo.jpg' %}" alt="Логотип" class="logo-img">
-            <div class="logo-text">logoipsum</div>
+            <div class="logo-text">
+                <a href="{% url 'main' %}" style="text-decoration: none;">logoipsum</a>
+            </div>
         </div>
-         <form action="{% url 'authorization' %}" target="_self">
-        <button class="login-button">Войти</button>
-             </form>
+        <nav>
+    <!-- Логика для отображения кнопок -->
+    {% if user.is_authenticated %}
+        <span></span>
+        <form action="{% url 'logout' %}" target="_self" method="post">
+            {% csrf_token %}
+            <button type="submit" class="login-button"> Пользователь - {{ user.username }} | Выйти</button>
+        </form>
+    {% else %}
+        <form action="{% url 'login' %}" target="_self">
+            {% csrf_token %}
+            <button type="submit" class="login-button">Войти</button>
+        </form>
+    {% endif %}
+        </nav>
     </header>
 
     {% block body %}

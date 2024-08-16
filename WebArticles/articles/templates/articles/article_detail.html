@@ -2,28 +2,29 @@
 {% load static %}
 
 {% block style %}
-<link rel="stylesheet" href="{% static 'articles/css/articlestyle.css' %}">
+<title>{{ article.title }}</title>
+<link rel="stylesheet" href="{% static 'articles/css/article_style.css' %}">
 <link rel="stylesheet" href="{% static 'articles/css/styles.css' %}">
 {% endblock %}
 
 {% block body %}
 <body>
     <div class="container">
-        <header>
+        <header class="article-header">
             <h1>{{ article.title }}</h1>
+            {% if user.is_authenticated and user == article.author %}
+                <div class="edit-link">
+                    <a href="/edit_article/{{ article.id }}">Изменить</a>
+                </div>
+            {% endif %}
         </header>
         <main>
             <div class="article-image">
-                <img src="{% static 'articles/images/image1.jpg' %}" alt="{{ article.title }}">
+                <img src="/media/{{ article.img }}">
             </div>
             <div class="article-content">
                 <p>{{ article.content }}</p>
             </div>
-            {% if user.is_authenticated and user == article.author %}
-                <div class="edit-link">
-                    <a href="{% url 'edit_article' article.id %}">Изменить</a>
-                </div>
-            {% endif %}
         </main>
     </div>
 </body>

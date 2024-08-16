@@ -1,0 +1,42 @@
+{% extends "articles/layout.html" %}
+
+{% load static %}
+
+{% block style %}
+<title>Изменить статью</title>
+<link rel="stylesheet" href="{% static 'articles/css/edit_article_style.css' %}">
+<link rel="stylesheet" href="{% static 'articles/css/styles.css' %}">
+{% endblock %}
+
+{% block body %}
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Название статьи</h1>
+            <form class="delete-button" method="POST" action="/delete_article/{{ pk }}">
+                 {% csrf_token %}
+                 <button type="submit" class="delete-button">Удалить статью</button>
+            </form>
+        </div>
+        <form id="articleForm" action="/edit_article/{{ pk }}" method="POST" enctype="multipart/form-data" >
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="image">Изображение</label>
+                <input type="file" id="image" name="image" required>
+            </div>
+
+            <div class="form-group">
+                <label for="title">Название</label>
+                <input type="text" id="title" name="title" placeholder="Введите название" required>
+            </div>
+
+            <div class="form-group">
+                <label for="content">Текст</label>
+                <textarea id="content" name="content" placeholder="Введите текст" rows="10" required></textarea>
+            </div>
+
+            <button type="submit">Сохранить</button>
+        </form>
+    </div>
+</body>
+{% endblock %}

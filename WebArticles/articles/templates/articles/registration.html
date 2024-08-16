@@ -1,0 +1,24 @@
+{% extends "articles/layout.html" %}
+{% load static %}
+
+{% block style %}
+<title>Регистрация</title>
+<link rel="stylesheet" href="{% static 'articles/css/registration.css' %}">
+<link rel="stylesheet" href="{% static 'articles/css/styles.css' %}">
+{% endblock %}
+
+{% block body %}
+<body>
+    <div class="registration-container">
+        <h2>Регистрация</h2>
+        <form action="{% url 'registration' %}" method="POST">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Логин" required>
+            <input type="password" name="password" placeholder="Пароль" required>
+            <input type="password" name="password_confirm" placeholder="Повтор пароля" required>
+            <button type="submit">Войти</button>
+        </form>
+        <a href="{% url 'login' %}" class="login-link">Войти в систему</a>
+    </div>
+</body>
+{% endblock %}
