@@ -13,7 +13,7 @@
     <div class="container">
         <div class="header">
             <h1>Название статьи</h1>
-            <form class="delete-button" method="POST" action="/delete_article/{{ pk }}">
+            <form method="POST" action="/delete_article/{{ pk }}">
                  {% csrf_token %}
                  <button type="submit" class="delete-button">Удалить статью</button>
             </form>
